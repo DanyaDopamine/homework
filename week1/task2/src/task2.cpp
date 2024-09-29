@@ -4,11 +4,10 @@
 int main() {
     std::cout << "Выберите, какую информацию о максимальных и минимальных значениях типов данных вы хотите увидеть:" << std::endl;
     std::cout << "1. int\n";
-    std::cout << "2. float\n";
-    std::cout << "3. double\n";
+    std::cout << "2. double\n";
 
     int choice;
-    std::cout << "Введите номер типа данных (1-3): ";
+    std::cout << "Введите номер типа данных (1-2): ";
     std::cin >> choice;
 
     switch (choice) {
