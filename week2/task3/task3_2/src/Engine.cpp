@@ -1,7 +1,7 @@
 #include "Engine.h"
 
-Engine::Engine(int power) : power(power) {}
+Engine::Engine(const std::string &type) : type(type) {}
 
-int Engine::getPower() const {
-    return power;
+std::string Engine::getType() const {
+    return type;
 }

@@ -1,25 +1,23 @@
 #include <iostream>
+#include <string>
 #include "Car.h"
 #include "Engine.h"
 #include "Passenger.h"
 
 int main() {
-    Engine engine(150); // Мощность двигателя
-    Car car("Toyota Corolla", engine); // Создание автомобиля
+    Engine engine("1.6 MT");
+    Car car("Lada Kalina 2 Sport", engine);
 
-    // Добавление пассажиров
-    Passenger passenger1("Alice");
-    Passenger passenger2("Bob");
+    std::string name1, name2, nameToRemove;
 
-    car.addPassenger(passenger1);
-    car.addPassenger(passenger2);
+    std::cout << "Введите имя первого пассажира: ";
+    std::getline(std::cin, name1);
+    car.addPassenger(Passenger(name1));
 
-    // Вывод информации
-    car.displayInfo();
+    std::cout << "Введите имя второго пассажира: ";
+    std::getline(std::cin, name2);
+    car.addPassenger(Passenger(name2));
 
-    // Удаление пассажира
-    car.removePassenger(passenger1);
-    std::cout << "\nAfter removing Alice:\n";
     car.displayInfo();
 
     return 0;

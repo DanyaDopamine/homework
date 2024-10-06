@@ -8,7 +8,7 @@ private:
     std::string name;
 
 public:
-    Passenger(const std::string& name);
+    Passenger(const std::string &name);
     std::string getName() const;
 };
 

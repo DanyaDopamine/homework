@@ -1,6 +1,7 @@
 #ifndef CAR_H
 #define CAR_H
 
+#include <string>
 #include <vector>
 #include "Engine.h"
 #include "Passenger.h"
@@ -12,9 +13,8 @@ private:
     std::vector<Passenger> passengers;
 
 public:
-    Car(const std::string& model, const Engine& engine);
-    void addPassenger(const Passenger& passenger);
-    void removePassenger(const Passenger& passenger);
+    Car(const std::string &model, const Engine &engine);
+    void addPassenger(const Passenger &passenger);
     void displayInfo() const;
 };
 

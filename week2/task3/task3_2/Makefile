@@ -1,24 +1,24 @@
-CXX = g++
-CXXFLAGS = -Wall -std=c++11
+SHELL=/bin/bash
+INC=-Iinclude
+CC=g++
 
-OBJ = main.o Engine.o Passenger.o Car.o
-
-all: car_program
-
-car_program: $(OBJ)
-	$(CXX) -o car_program $(OBJ)
-
-main.o: main.cpp
-	$(CXX) $(CXXFLAGS) -c main.cpp
-
-Engine.o: Engine.cpp Engine.h
-	$(CXX) $(CXXFLAGS) -c Engine.cpp
-
-Passenger.o: Passenger.cpp Passenger.h
-	$(CXX) $(CXXFLAGS) -c Passenger.cpp
-
-Car.o: Car.cpp Car.h Engine.h Passenger.h
-	$(CXX) $(CXXFLAGS) -c Car.cpp
+all: clean prepare build
+	@echo "Building application...done"
 
 clean:
-	rm -f *.o car_program
+	rm -rf bin
+	rm -rf obj
+
+prepare:
+	mkdir -p bin
+	mkdir -p obj
+
+build:
+	$(CC) -Wall -g -O0 -c $(INC) -o obj/Engine.o src/Engine.cpp
+	$(CC) -Wall -g -O0 -c $(INC) -o obj/Passenger.o src/Passenger.cpp
+	$(CC) -Wall -g -O0 -c $(INC) -o obj/Car.o src/Car.cpp
+	$(CC) -Wall -g -O0 -c $(INC) -o obj/main.o src/main.cpp
+	$(CC) -g -O0 -o bin/main obj/Engine.o obj/Passenger.o obj/Car.o obj/main.o
+
+run: build
+	./bin/main
