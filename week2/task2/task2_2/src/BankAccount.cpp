@@ -2,24 +2,24 @@
 #include <iostream>
 
 BankAccount::BankAccount(const std::string &accNum)
-    : номерСчета(accNum), баланс(0.0) {}
+    : NumberAccount(accNum), Balance(0.0) {}
 
-void BankAccount::положить(double сумма) {
-    if (сумма > 0) {
-        баланс += сумма;
+void BankAccount::Put(double Summa) {
+    if (Summa > 0) {
+        Balance += Summa;
     } else {
         std::cerr << "Сумма депозита должна быть положительной!" << std::endl;
     }
 }
 
-void BankAccount::снять(double сумма) {
-    if (сумма > 0 && сумма <= баланс) {
-        баланс -= сумма;
+void BankAccount::Remove(double Summa) {
+    if (Summa > 0 && Summa <= Balance) {
+        Balance -= Summa;
     } else {
         std::cerr << "Недостаточно средств или неверная сумма снятия!" << std::endl;
     }
 }
 
-double BankAccount::получитьБаланс() const {
-    return баланс;
+double BankAccount::GetBalance() const {
+    return Balance;
 }

@@ -2,37 +2,36 @@
 #include "BankAccount.hpp"
 
 int main() {
-    BankAccount счет("123456789");
-    int выбор;
+    BankAccount Account("123456789");
+    int Choice;
 
     do {
-        std::cout << "\n---------- Меню ----------" << std::endl;
+        std::cout << " Меню:" << std::endl;
         std::cout << "1. Положить деньги" << std::endl;
         std::cout << "2. Снять деньги" << std::endl;
         std::cout << "3. Посмотреть баланс" << std::endl;
         std::cout << "0. Выход" << std::endl;
-        std::cout << "---------------------------" << std::endl;
         std::cout << "Введите ваш выбор: ";
-        std::cin >> выбор;
+        std::cin >> Choice;
 
-        switch (выбор) {
+        switch (Choice) {
             case 1: {
-                double сумма;
+                double Summa;
                 std::cout << "Введите сумму для пополнения: ";
-                std::cin >> сумма;
-                счет.положить(сумма);
-                std::cout << "На счет добавлено: " << сумма << " руб." << std::endl;
+                std::cin >> Summa;
+                Account.Put(Summa);
+                std::cout << "На счет добавлено: " << Summa << " руб." << std::endl;
                 break;
             }
             case 2: {
-                double сумма;
+                double Summa;
                 std::cout << "Введите сумму для снятия: ";
-                std::cin >> сумма;
-                счет.снять(сумма);
+                std::cin >> Summa;
+                Account.Remove(Summa);
                 break;
             }
             case 3: {
-                std::cout << "Текущий баланс: " << счет.получитьБаланс() << " руб." << std::endl;
+                std::cout << "Текущий баланс: " << Account.GetBalance() << " руб." << std::endl;
                 break;
             }
             case 0:
@@ -41,7 +40,7 @@ int main() {
             default:
                 std::cout << "Неверный выбор. Пожалуйста, попробуйте еще раз." << std::endl;
         }
-    } while (выбор != 0);
+    } while (Choice != 0);
 
     return 0;
 }

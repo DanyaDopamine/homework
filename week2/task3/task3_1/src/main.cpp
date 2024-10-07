@@ -1,14 +1,13 @@
 #include <iostream>
-#include "Author.h"
-#include "Book.h"
+#include "Author.hpp"
+#include "Book.hpp"
 
 int main() {
     Author author("Джек Лондон", 1876);
-    Book book("Мартин Иден", author);
+    Book book(author);
 
-    std::cout << "Book Title: " << book.title << std::endl;
-    std::cout << "Author: " << book.author.name << std::endl;
-    std::cout << "Birth Year: " << book.author.birthYear << std::endl;
+    book.displayInfo();
 
     return 0;
 }
+

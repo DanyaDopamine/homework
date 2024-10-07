@@ -5,15 +5,15 @@
 
 class BankAccount {
 private:
-    std::string номерСчета;
-    double баланс;
+    std::string NumberAccount;
+    double Balance;
 
 public:
     BankAccount(const std::string &accNum);
     
-    void положить(double сумма);
-    void снять(double сумма);
-    double получитьБаланс() const;
+    void Put(double Summa);
+    void Remove(double Summa);
+    double GetBalance() const;
 };
 
 #endif // BANKACCOUNT_HPP

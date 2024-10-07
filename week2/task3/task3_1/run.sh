@@ -1,4 +1,3 @@
 #!/bin/bash
 
-
-./bin/main.p
+./bin/main
